@@ -124,6 +124,7 @@
         margin-left: 10rem;
 
         h2 {
+            padding-top: 1rem;
             margin-top: 15rem;
             text-align: center;
             font-size:5rem;
@@ -135,6 +136,7 @@
 
 .questions {
     @include m.grid(2);
+    row-gap: 0rem;
 
     .question1,
     .question2,
@@ -145,8 +147,8 @@
 
         h2 {
             width: 80rem;
-            border-radius: 3rem;
-            padding: 2rem;
+            border-radius: 2.3rem;
+            padding: 1rem;
             text-align: center;
             font-size:3rem;
             font-weight: 100;
