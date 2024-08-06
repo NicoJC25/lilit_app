@@ -1,0 +1,61 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.footer {
+    background-color: v.$light_brown;
+    display: flex;
+
+    .help_and_logo {
+        margin-left: 15rem;
+        display: flex;
+
+        img {
+            margin-left: 25rem;
+            width: 15rem;
+            height: 15rem;
+        }
+    }
+
+    .text {
+        width: 35rem;
+        padding-top: 5rem;
+        padding-bottom: 3rem;
+        p {
+            margin: 0;
+            line-height: 1;
+            color: v.$brown;
+        }
+    }
+}
+
+.politics_and_social_media {
+    margin-left: 12rem;
+    @include m.grid(2);
+
+    .politics_text {
+        display: flex;
+        width: 60rem;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding-bottom: 4rem;
+        p {
+
+            margin: 0;
+            line-height: 1;
+            color: v.$brown;
+        }
+    }
+
+    .social_media_logos {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        margin-right: 10rem;
+        padding-bottom: 2.5rem;
+
+        img {
+            width: 6.5rem;
+            height: 5rem;
+        }
+    }
+}
