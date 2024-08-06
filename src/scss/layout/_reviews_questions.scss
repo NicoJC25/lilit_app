@@ -1,0 +1,114 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.reviews_and_questions {
+    position: relative;
+
+    .reviews_title {
+        z-index: -2;  // Pon el texto en un nivel superior
+        position: absolute;  // Para asegurar que el z-index se aplique correctamente
+        background-color: v.$blue;
+        width: 100%;
+        padding: 2rem;
+        text-align: left;
+        
+        h2 {
+            font-family: v.$main_font;
+            font-weight: 100;
+            margin: 0;
+            margin-left: 30rem;
+        }
+    }
+}
+
+.reviews {
+    margin-top: 25rem;
+    display: grid;
+    grid-template-columns: 35% 65%;
+    align-items: center;
+    justify-items: center;
+
+    .review_input {
+        background-color: rgba($color: rgb(214,211,210), $alpha: 1.0);
+        max-height: 50rem;
+        height: 50rem;
+        max-width: 45rem;
+        width: 50rem;
+        border-radius: 7rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px 3px 21px 0px rgba(0,0,0,0.30);
+
+        p { 
+            margin: 0;
+            text-align: center;
+            color: v.$blue;
+            font-size: 3rem;
+        }
+    }
+
+    
+}
+
+.clients_reviews {
+    margin-top: 8rem;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+
+    .client_review {
+        display: flex;
+        flex-direction: column;
+        max-width: 40rem;
+        padding: 4rem 4rem 0rem 4rem;
+        background-color: rgba($color: rgb(214,211,210), $alpha: 1.0);
+        border-radius: 7rem;
+        color: v.$blue;
+        box-shadow: 0px 3px 21px 0px rgba(0,0,0,0.30);
+
+        h4 {
+            font-weight: 400;
+            font-size: 2.7rem;
+        }
+
+        p {
+            margin: 0;
+            color: v.$blue;
+            font-size: 2.1rem;
+            line-height: 1;
+        }
+
+        hr {
+            width: 100%;
+            color: v.$blue;
+        }
+    }
+
+    .arrows {
+        max-width: 30rem;
+        max-height: 30rem;
+        cursor: pointer;
+
+        &:hover {
+            filter: invert(0%) sepia(100%) saturate(0%) hue-rotate(284deg) brightness(107%) contrast(107%);
+            transition: all .3s ease-in;
+        }
+    }
+}
+
+.likes {
+    display: flex;
+    justify-content: flex-start;
+    margin: 0rem 1rem 1rem 0rem;
+    img {
+        margin: 0;
+        max-width: 5rem;
+        max-height: 5rem;
+    }
+    p {
+        margin: 0;
+        display: flex;
+        align-items: center;
+    }
+}
