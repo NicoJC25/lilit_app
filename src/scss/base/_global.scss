@@ -28,9 +28,10 @@ body {
     overflow-x: hidden;
 
     .tridimensional_form_1,
+    .tridimensional_form_1_v2,
     .tridimensional_form_2,
     .tridimensional_form_3,
-    .tridimensional_form_4{
+    .tridimensional_form_5{
         z-index: -1;
         position: absolute;
     }
@@ -41,22 +42,45 @@ body {
         transform: translate(-12%, -30%);
     }
 
+    .tridimensional_form_1_v2 {
+        top: 80rem;
+        left: 0;
+        transform: translate(-22%, 100%);
+    }
+
     .tridimensional_form_2 {
         top: 0;
         right: 0;
         transform: translate(20%, -30%);
     }
-    
+
     .tridimensional_form_3 {
         left: 0;
-        transform: translate(-15%, 60%);
+        top: 0;
+        transform: translate(-15%, 80%);
     }
-
+    
     .tridimensional_form_4 {
+        position: absolute;
+        z-index: -3;
         right: 0;
-        transform: translate(10%, 60%);
+        top: 0;
+        transform: translate(10%, 80%);
     }
 
+    .tridimensional_form_5 {
+        right: 0;
+        top: 90rem;
+        transform: translate(28%, 100%);
+    }
+
+    .tridimensional_form_5_shadow {
+        position: absolute;
+        z-index: -2;
+        right: 0;
+        top: 90rem;
+        transform: translate(20%, 92%);
+    }
 
     &.overflow-hidden {
         overflow: hidden;
@@ -82,7 +106,7 @@ h1 {
     font-size: 4rem;
 }
 h2 {
-    font-size: 4.6rem;
+    font-size: 7.6rem;
 }
 h3 {
     font-size: 8rem;

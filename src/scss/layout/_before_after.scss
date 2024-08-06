@@ -1,0 +1,41 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.before_and_after {
+    position: relative;  // Asegura que los elementos hijos se posicionen en relación a este contenedor
+
+    .before_after_text {
+        z-index: -2;  // Pon el texto en un nivel superior
+        position: absolute;  // Para asegurar que el z-index se aplique correctamente
+        background-color: v.$blue;
+        width: 100%;
+        padding: 2rem;
+        text-align: right;
+        right: 0;
+
+        h2 {
+            font-family: v.$main_font;
+            font-weight: 100;
+            margin: 0;
+            margin-right: 20rem;
+        }
+    }
+}
+
+.img_before_after {
+    @include m.grid(3);
+    margin-top: 25rem;
+    align-items: center;
+    max-width: 182rem;
+    
+    img {
+        display: block;
+        max-width: 45rem;
+        margin: auto;
+        // -webkit-box-shadow: 0px 3px 21px 0px rgba(0,0,0,0.75);
+        // -moz-box-shadow: 0px 3px 21px 0px rgba(0,0,0,0.75);
+        // box-shadow: 0px 3px 21px 0px rgba(0,0,0,0.75);
+        
+
+    }
+}
