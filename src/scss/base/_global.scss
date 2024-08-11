@@ -15,7 +15,7 @@ html {
 
 /* body */
 
-body {
+.body-index {
     font-family: v.$main_font;
     font-optical-sizing: auto;
     font-style: normal;
@@ -94,6 +94,18 @@ body {
         overflow: hidden;
     }
 }
+
+.body-services {
+    font-family: v.$main_font;
+    font-optical-sizing: auto;
+    font-style: normal;
+    color: v.$white;
+    font-size: 2rem;
+    background-image: url(../../src/img/fondo2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 p {
     color: v.$white;
     line-height: 1.5;

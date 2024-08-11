@@ -36,5 +36,11 @@
         text-transform: uppercase;
         font-weight: 100;
         padding-top: 4rem;
+
+        &:hover {
+            color: v.$blue;
+        }
     }
+
+    
 }
