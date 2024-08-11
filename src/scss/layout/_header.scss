@@ -44,3 +44,43 @@
 
     
 }
+
+.header-postoperatory {
+    background-color: rgba($color: v.$white, $alpha: .5);
+    border-bottom: .1rem solid #b8b8b8; 
+    border-radius: 0 0 4rem 4rem;
+
+    .header-content {
+        
+        @include m.tablet {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+    }
+
+    .header_img {
+        width: 10rem;
+        text-align: left;
+    }
+}
+
+.nav-postoperatory {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10rem;
+
+
+    a {
+        color: v.$brown;
+        font-size: 3.5rem;
+        text-transform: uppercase;
+        font-weight: 100;
+        padding-top: 2rem;
+
+        &:hover {
+            color: v.$blue;
+        }
+    }
+}
