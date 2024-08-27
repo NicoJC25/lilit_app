@@ -29,7 +29,6 @@
     justify-content: space-between;
     gap: 10rem;
 
-
     a {
         color: v.$brown;
         font-size: 3.5rem;
@@ -40,9 +39,17 @@
         &:hover {
             color: v.$blue;
         }
+        
+        &.active {
+            color: v.$blue; // Color que deseas para el estado activo
+        }
     }
 
     
+}
+
+.nav-inicio {
+    color: v.$blue;
 }
 
 .header-postoperatory {
@@ -80,6 +87,10 @@
         padding-top: 2rem;
 
         &:hover {
+            color: v.$blue;
+        }
+
+        &.active {
             color: v.$blue;
         }
     }
