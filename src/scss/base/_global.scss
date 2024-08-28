@@ -128,6 +128,44 @@ html {
     background-repeat: no-repeat;
 }
 
+.body-service {
+    font-family: v.$main_font;
+    font-optical-sizing: auto;
+    font-style: normal;
+    color: v.$white;
+    font-size: 2rem;
+    background-image: url(../../src/img/fondo5.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+    .tridimensional_form_1,
+    .tridimensional_form_2,
+    .tridimensional_form_1_par{
+        z-index: -1;
+        position: absolute;
+    }
+
+    .tridimensional_form_1 {
+        top: 0;
+        left: 0;
+        transform: translate(-15%, -40%);
+    }
+
+    .tridimensional_form_2 {
+        top: 0;
+        right: 0;
+        transform: translate(20%, -30%);
+    }
+
+    .tridimensional_form_1_par {
+        right: 0;
+        transform: translate(20%, 65%);
+    }
+}
+
 .body-social_media {
     font-family: v.$main_font;
     font-optical-sizing: auto;
@@ -143,7 +181,8 @@ html {
 
     .tridimensional_form_1,
     .tridimensional_form_2,
-    .tridimensional_form_3{
+    .tridimensional_form_3,
+    .tridimensional_form_1_par{
         z-index: -1;
         position: absolute;
     }
@@ -164,6 +203,11 @@ html {
         left: 0;
         
         transform: translate(-25%, 60%);
+    }
+
+    .tridimensional_form_1_par {
+        right: 0;
+        transform: translate(20%, 65%);
     }
 }
 
