@@ -35,6 +35,7 @@
         text-transform: uppercase;
         font-weight: 100;
         padding-top: 4rem;
+        text-decoration: none;
 
         &:hover {
             color: v.$blue;
@@ -44,8 +45,80 @@
             color: v.$blue; // Color que deseas para el estado activo
         }
     }
+}
 
-    
+.dropdown {
+    position: relative;
+    margin-top: 4rem;
+
+    &:hover .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown-menu {
+        margin-top: 2.7rem;
+        display: none;
+        position: absolute;
+        top: 100%; // Posiciona el submenú debajo del enlace "Servicios"
+        left: 0;
+        background-color: rgba($color: v.$white, $alpha: .5);
+        padding: 1rem;
+        border-radius: 0 0 2rem 2rem;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+
+        li {
+            margin: 0;
+            padding: 0 2rem;
+            list-style: none;
+
+            a {
+                font-size: 2.5rem; // Tamaño más pequeño para las opciones del submenú
+                color: v.$brown;
+                text-decoration: none;
+
+                &:hover {
+                    color: v.$blue;
+                }
+            }
+        }
+    }
+}
+
+
+.dropdown-services {
+    position: relative;
+    margin-top: 1.9rem;
+
+    &:hover .dropdown-menu-services {
+        display: block;
+    }
+
+    .dropdown-menu-services {
+        margin-top: 1.8rem;
+        display: none;
+        position: absolute;
+        top: 100%; // Posiciona el submenú debajo del enlace "Servicios"
+        left: 0;
+        background-color: rgba($color: v.$white, $alpha: .5);
+        border-radius: 0 0 2rem 2rem;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+
+        li {
+            margin: 0;
+            padding: 0 2rem;
+            list-style: none;
+
+            a {
+                font-size: 2.5rem; // Tamaño más pequeño para las opciones del submenú
+                color: v.$brown;
+                text-decoration: none;
+
+                &:hover {
+                    color: v.$blue;
+                }
+            }
+        }
+    }
 }
 
 .nav-inicio {
