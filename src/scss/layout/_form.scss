@@ -1,0 +1,42 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.main-content-quotes {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.quote-form {
+    width: 75rem;
+    height: 50rem;
+    display: flex;
+    flex-direction: column;
+    background-color: v.$blue;
+    padding: 3rem;
+    align-items: center;
+    gap: 2rem;
+    border-radius: 3rem;
+    padding-top: 10rem;
+
+    .input,
+    .date {
+        padding: 1rem;
+        width: 50rem;
+        border-radius: 1rem;
+    }
+
+    .label {
+        font-size: 5rem;
+    }
+
+    .submit {
+        margin-top: 4rem;
+        text-transform: uppercase;
+        height: 5rem;
+        width: 25rem;
+        border-radius: 2rem;
+        background-color: v.$light_brown;
+    }
+}
