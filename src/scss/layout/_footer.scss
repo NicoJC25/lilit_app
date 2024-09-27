@@ -4,15 +4,26 @@
 .footer {
     background-color: v.$light_brown;
     display: flex;
+    flex-direction: column;
+    @include m.desktopXXL {
+        flex-direction: row;
+    }
 
     .help_and_logo {
-        margin-left: 15rem;
         display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include m.desktopXXL {
+            margin-left: 5rem;
+            flex-direction: row;
+        }
 
         img {
-            margin-left: 25rem;
             width: 15rem;
             height: 15rem;
+            @include m.desktopXXL {
+                margin-left: 25rem;
+            }
         }
     }
 
@@ -20,6 +31,10 @@
         width: 35rem;
         padding-top: 5rem;
         padding-bottom: 3rem;
+        text-align: center;
+        @include m.desktopXXL {
+            text-align: left;
+        }
         p {
             margin: 0;
             line-height: 1;
@@ -29,17 +44,25 @@
 }
 
 .politics_and_social_media {
-    margin-left: 12rem;
-    @include m.grid(2);
+    margin-top: 2rem;
+    @include m.desktopXXL {
+        @include m.grid(2);
+        margin-left: 12rem;
+        margin-top: 0;
+    }
 
     .politics_text {
         display: flex;
-        width: 60rem;
-        justify-content: space-between;
-        align-items: flex-end;
+        flex-direction: column;
+        align-items: center;
         padding-bottom: 4rem;
+        @include m.desktopXXL {
+            align-items: flex-end;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 60rem;
+        }
         p {
-
             margin: 0;
             line-height: 1;
             color: v.$brown;
@@ -48,10 +71,14 @@
 
     .social_media_logos {
         display: flex;
-        justify-content: flex-end;
-        align-items: flex-end;
-        margin-right: 10rem;
+        justify-content: center;
+        align-items: center;
         padding-bottom: 2.5rem;
+        @include m.desktopXXL {
+            justify-content: flex-end;
+            align-items: flex-end;
+            margin-right: 10rem;
+        }
 
         img {
             width: 6.5rem;

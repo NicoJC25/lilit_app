@@ -1,45 +1,72 @@
 @use 'base/variables' as v;
 @use 'base/mixins' as m;
 
-.main-content {
-    justify-content: center;
-    align-items: center;
-    
-}
-
 .main-index {
-    @include m.grid(2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include m.desktop {
+        @include m.grid(2);
+        align-content: center;
+        justify-items: center;
+    }
 
     .description {
-        margin: auto;
+        margin: 0 2rem 0 2rem;
         max-width: 70rem;
-        height: 50rem;
-        max-height: 100rem;
-        padding: 10rem 4rem 4rem 4rem;
+        height: auto;
+        max-height: auto;
         border-radius: 5rem;
         background-color: v.$blue;
         text-align: center;
 
+        @include m.desktop {
+            height: 50rem;
+            max-height: 100rem;
+            padding: 10rem 4rem 4rem 4rem;
+        }
+
+        @include m.desktopXL {
+            margin: auto;
+        }
+
         h3 {
-            
             font-family: v.$cursive_font;
             font-weight: 400;
+            margin: 0;
+            padding: 4rem 1rem 1rem 1rem;
+            @include m.desktop {
+                margin: auto;
+                padding: 0 0 0 0;
+            }
         }
 
         p {
             font-size: 2.8rem;
             line-height: 1;
+            padding: 1rem 1rem 4rem 1rem;
+            @include m.desktop {
+                padding: 0 0 0 0;
+            }
         }
     }
 }
 
 .main-img {
-    z-index: -2;
+    @include m.desktop {
+        z-index: -2;
+    }
+
     img {
         display: block;
-        width: 80rem;
-        margin-left: auto;
-        margin-right: auto;
+        width: 60rem;
+        padding: 0 10rem 0 10rem;
+        margin-top: 5rem;
+
+        @include m.desktop {
+            margin-top: 0;
+            padding: 0 0 0 0;
+        }
     }
 }
 

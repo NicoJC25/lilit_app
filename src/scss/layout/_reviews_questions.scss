@@ -2,43 +2,63 @@
 @use 'base/mixins' as m;
 
 .reviews_and_questions {
-    position: relative;
+    @include m.desktop {
+        position: relative;
+    }
 
     .reviews_title {
-        z-index: -2;  // Pon el texto en un nivel superior
-        position: absolute;  // Para asegurar que el z-index se aplique correctamente
         background-color: v.$blue;
         width: 100%;
         padding: 2rem;
-        text-align: left;
+        text-align: center;
+        @include m.desktop {
+            z-index: -2;  // Pon el texto en un nivel superior
+            position: absolute;  // Para asegurar que el z-index se aplique correctamente
+            text-align: left;
+        }
         
         h2 {
             font-family: v.$main_font;
             font-weight: 100;
             margin: 0;
-            margin-left: 30rem;
+            @include m.desktop {
+                margin-left: 30rem;
+            }
         }
     }
 }
 
 .reviews {
-    margin-top: 25rem;
-    display: grid;
-    grid-template-columns: 35% 65%;
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-items: center;
+    @include m.desktop {
+        margin-top: 25rem;
+        margin-left: 10rem;
+        display: grid;
+        grid-template-columns: 35% 65%;
+        align-items: center;
+        justify-items: center;
+        
+    }
 
     .review_input {
         background-color: rgba($color: rgb(214,211,210), $alpha: 1.0);
-        max-height: 50rem;
-        height: 50rem;
-        max-width: 45rem;
-        width: 50rem;
         border-radius: 7rem;
+        width: 35rem;
+        height: 35rem;
         display: flex;
         justify-content: center;
         align-items: center;
         box-shadow: 0px 3px 21px 0px rgba(0,0,0,0.30);
+        @include m.desktop {
+            max-height: 50rem;
+            height: 50rem;
+            max-width: 45rem;
+            width: 50rem;
+        }
 
         p { 
             margin: 0;
@@ -56,16 +76,27 @@
     display: flex;
     justify-items: center;
     align-items: center;
+    @include m.desktop {
+        margin-top: 0;
+    }
 
     .client_review {
         display: flex;
         flex-direction: column;
-        max-width: 40rem;
+        max-width: 35rem;
         padding: 4rem 4rem 0rem 4rem;
         background-color: rgba($color: rgb(214,211,210), $alpha: 1.0);
         border-radius: 7rem;
         color: v.$blue;
         box-shadow: 0px 3px 21px 0px rgba(0,0,0,0.30);
+        @include m.tablet {
+            height: 50rem;
+            width: 65rem;
+        }
+        @include m.desktop {
+            height: 50rem;
+            width: 65rem;
+        }
 
         h4 {
             font-weight: 400;
@@ -86,9 +117,13 @@
     }
 
     .arrows {
-        max-width: 30rem;
-        max-height: 30rem;
+        max-width: 15rem;
+        max-height: 15rem;
         cursor: pointer;
+        @include m.desktop {
+            max-width: 20rem;
+            max-height: 20rem;
+        }
 
         &:hover {
             filter: invert(0%) sepia(100%) saturate(0%) hue-rotate(284deg) brightness(107%) contrast(107%);
@@ -114,45 +149,80 @@
 }
 
 .frequent_questions {
-
+    margin-top: 5rem;
+    @include m.desktop {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    @include m.desktopXXL {
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
     .question_title {
         background: rgb(228,194,171);
         background: linear-gradient(90deg, rgba(228,194,171,1) 0%, rgba(228,192,171,1) 48%, rgba(217,255,255,1) 100%); 
-        height: 8rem;
-        width: 65rem;
+        height: auto;
+        width: 100%;
         border-radius: 5rem;
-        margin-left: 10rem;
+        @include m.tablet {
+            margin-top: 15rem;
+            width: 65rem;
+            height: 8rem;
+        }
+        
+        @include m.desktopXXL {
+            height: 8rem;
+            margin-left: 1rem;
+            width: 65rem;
+        }
 
         h2 {
-            padding-top: 1rem;
-            margin-top: 15rem;
+            padding: 1rem 0 1rem 0;
             text-align: center;
             font-size:5rem;
             font-weight: 100;
             color: v.$blue;
+            @include m.desktop {
+                padding: 1rem 0 0 0;
+            }
         }
     }
 }
 
 .questions {
-    @include m.grid(2);
-    row-gap: 0rem;
+    @include m.desktopXXL {
+        @include m.grid(2);
+        row-gap: 0rem;
+    }
 
     .question1,
     .question2,
     .question3,
     .question4 {
         display: flex;
-        justify-content: center;
+        justify-content: end;
+        margin-left: 2rem;
+        @include m.desktop {
+            justify-content: center;
+            margin-left: 1rem;
+        }
 
         h2 {
-            width: 80rem;
+            width: 100rem;
+            height: auto;
             border-radius: 2.3rem;
             padding: 1rem;
-            text-align: center;
+            text-align: start;
             font-size:3rem;
             font-weight: 100;
             background-color: v.$blue;
+            @include m.desktop {
+                width: 80rem;
+                margin-bottom: 0;
+                text-align: center;
+            }
         }
 
         img {
@@ -161,13 +231,22 @@
         }
     }
 
-    .question1,
-    .question2 {
-        margin-top: 8rem;
+    .question1 {
+        margin-top: 5rem;
     }
 
     .question1,
-    .question3 {
-        margin-left: 10rem;
+    .question2 {
+        @include m.desktopXXL { 
+            margin-bottom: 0;
+        }
+    }
+
+    .question2,
+    .question3,
+    .question4 {
+        @include m.desktop {
+            margin-top: 5rem;
+        }
     }
 }

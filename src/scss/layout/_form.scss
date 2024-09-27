@@ -9,7 +9,7 @@
 }
 
 .quote-form {
-    width: 75rem;
+    width: 30rem;
     height: 50rem;
     display: flex;
     flex-direction: column;
@@ -19,24 +19,35 @@
     gap: 2rem;
     border-radius: 3rem;
     padding-top: 10rem;
+    @include m.tablet {
+        width: 75rem;
+        height: 50rem;
+    }
 
     .input,
     .date {
         padding: 1rem;
-        width: 50rem;
+        width: 20rem;
         border-radius: 1rem;
+        @include m.tablet {
+            width: 50rem;
+        }
     }
 
     .label {
+        text-align: center;
         font-size: 5rem;
     }
 
     .submit {
-        margin-top: 4rem;
+        margin-top: 1rem;
         text-transform: uppercase;
         height: 5rem;
         width: 25rem;
         border-radius: 2rem;
         background-color: v.$light_brown;
+        @include m.tablet {
+            margin-top: 4rem;
+        }
     }
 }

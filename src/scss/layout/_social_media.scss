@@ -3,11 +3,17 @@
 
 
 .main-content-social_media {
-
+    @include m.desktop {
+        height: 85rem;
+    }
+    @include m.desktopXL {
+        height: 105rem;
+    }
     .social-media-texts_1 {
-        @include m.grid(4);
-        margin-top: 20rem;
-
+        @include m.desktop {
+            margin-top: 20rem;
+            @include m.grid(4);
+        }
         .instagram,
         .facebook,
         .tik_tok,
@@ -16,14 +22,20 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            margin-top: 5rem;
+            @include m.desktop {
+                margin-top: 0;
+            }
         }
     }
 
     .social-media-texts_2 {
-        @include m.grid(3, 0rem);
-        width: 150rem;
-        margin-top: 10rem;
-        margin-left: 23rem;
+        @include m.desktop {
+            width: 150rem;
+            @include m.grid(3, 0rem);
+            margin-top: 10rem;
+            margin-left: 23rem;
+        }
 
         .telefono,
         .correo,
@@ -32,6 +44,10 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            margin-top: 5rem;
+            @include m.desktop {
+                margin-top: 0;
+            }
         }
     }
 

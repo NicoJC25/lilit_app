@@ -1,4 +1,5 @@
-@use 'variables' as v; 
+@use 'variables' as v;
+@use 'mixins' as m;
 /* Global settings */
 
 /* rem configuration */
@@ -15,6 +16,10 @@ html {
 
 /* body */
 
+html, body,.body-index {
+    overflow-x: hidden;
+}
+
 .body-index {
     font-family: v.$main_font;
     font-optical-sizing: auto;
@@ -25,8 +30,6 @@ html {
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
-    overflow-x: hidden;
-    
 
     .tridimensional_form_1,
     .tridimensional_form_1_v2,
@@ -41,25 +44,61 @@ html {
     .tridimensional_form_1 {
         top: 0;
         left: 0;
-        transform: translate(-12%, -30%);
+        transform: translate(-50%, -190%);
+        @include m.desktop {
+            transform: translate(-30%, -30%);
+        }
+        @include m.desktopXL {
+            transform: translate(-32%, -45%);
+        }
+        @include m.desktopXXL {
+            transform: translate(-12%, -30%);
+        }
     }
 
     .tridimensional_form_1_v2 {
         top: 80rem;
         left: 0;
-        transform: translate(-22%, 100%);
+        transform: translate(-22%, -700%);
+        @include m.desktop {
+            transform: translate(-22%, 60%);
+        }
+        @include m.desktopXL {
+            transform: translate(-32%, 70%);
+        }
+        @include m.desktopXXL {
+            transform: translate(-22%, 70%);
+        }
     }
 
     .tridimensional_form_2 {
         top: 0;
         right: 0;
-        transform: translate(20%, -30%);
+        transform: translate(50%, -240%);
+        @include m.desktop {
+            transform: translate(50%, -20%);    
+        }
+        @include m.desktopXL {
+            transform: translate(20%, -30%);
+        }
+        @include m.desktopXXL {
+            transform: translate(20%, -30%);
+        }
     }
 
     .tridimensional_form_3 {
         left: 0;
         top: 0;
-        transform: translate(-15%, 80%);
+        transform: translate(-40%, -420%);
+        @include m.desktop{
+            transform: translate(-40%, 70%);
+        }
+        @include m.desktopXL {
+            transform: translate(-40%, 60%);
+        }
+        @include m.desktopXXL {
+            transform: translate(-15%, 60%);
+        }
     }
     
     .tridimensional_form_4 {
@@ -67,19 +106,46 @@ html {
         z-index: -3;
         right: 0;
         top: 0;
-        transform: translate(10%, 80%);
+        transform: translate(10%, -550%);
+        @include m.desktop {
+            transform: translate(10%, 60%);
+        }
+        @include m.desktopXL {
+            transform: translate(10%, 55%);
+        }
+        @include m.desktopXXL {
+            transform: translate(10%, 60%);
+        }
     }
 
     .tridimensional_form_4_v2 {
         right: 0;
         bottom: 0;
-        transform: translate(6%);
+        transform: translate(-106%, -130%);
+        @include m.desktop {
+            transform: translate(25%);
+        }
+        @include m.desktopXL {
+            transform: translate(10%, -35%);
+        }
+        @include m.desktopXXL {
+            transform: translate(6%);
+        }
     }
 
     .tridimensional_form_5 {
         right: 0;
         top: 90rem;
-        transform: translate(28%, 100%);
+        transform: translate(28%, -880%);
+        @include m.desktop {
+            transform: translate(28%, 90%);
+        }
+        @include m.desktopXL {
+            transform: translate(28%, 80%);
+        }
+        @include m.desktopXXL {
+            transform: translate(28%, 80%);
+        }
     }
 
     .tridimensional_form_5_shadow {
@@ -87,7 +153,13 @@ html {
         z-index: -2;
         right: 0;
         top: 90rem;
-        transform: translate(20%, 92%);
+        transform: translate(20%, -860%);
+        @include m.desktopXL {
+            transform: translate(20%, 72%);
+        }
+        @include m.desktopXXL {
+            transform: translate(20%, 72%);
+        }
     }
 
     &.overflow-hidden {
@@ -101,9 +173,12 @@ html {
     font-style: normal;
     color: v.$white;
     font-size: 2rem;
-    background-image: url(../../src/img/fondo2.png);
+    background-image: url(../../src/img/fondo1.png);
     background-size: cover;
     background-repeat: no-repeat;
+    @include m.desktop {
+        background-image: url(../../src/img/fondo2.png);
+    }
 }
 
 .body-coworking {
@@ -112,9 +187,12 @@ html {
     font-style: normal;
     color: v.$white;
     font-size: 2rem;
-    background-image: url(../../src/img/fondo3.png);
+    background-image: url(../../src/img/fondo1.png);
     background-size: cover;
     background-repeat: no-repeat;
+    @include m.desktop {
+        background-image: url(../../src/img/fondo3.png);
+    }
 }
 
 .body-results {
@@ -123,9 +201,12 @@ html {
     font-style: normal;
     color: v.$white;
     font-size: 2rem;
-    background-image: url(../../src/img/fondo4.png);
+    background-image: url(../../src/img/fondo1.png);
     background-size: cover;
     background-repeat: no-repeat;
+    @include m.desktop {
+        background-image: url(../../src/img/fondo4.png);
+    }
 }
 
 .body-service {
@@ -151,18 +232,45 @@ html {
     .tridimensional_form_1 {
         top: 0;
         left: 0;
-        transform: translate(-15%, -40%);
+        transform: translate(-115%, -40%);
+        @include m.desktop {
+            transform: translate(-40%, -50%);
+        }
+        @include m.desktopXL {
+            transform: translate(-35%, -40%);
+        }
+        @include m.desktopXXL {
+            transform: translate(-15%, -40%);
+        }
     }
 
     .tridimensional_form_2 {
         top: 0;
         right: 0;
-        transform: translate(20%, -30%);
+        transform: translate(120%, -30%);
+        @include m.desktop {
+            transform: translate(40%, -35%);
+        }
+        @include m.desktopXL {
+            transform: translate(35%, -30%);
+        }
+        @include m.desktopXXL {
+            transform: translate(20%, -30%);
+        }
     }
 
     .tridimensional_form_1_par {
         right: 0;
-        transform: translate(20%, 65%);
+        transform: translate(120%, 65%);
+        @include m.desktop {
+            transform: translate(20%, 340%);
+        }
+        @include m.desktopXL {
+            transform: translate(20%, 165%);
+        }
+        @include m.desktopXXL {
+            transform: translate(20%, 65%);
+        }
     }
 }
 
@@ -188,26 +296,58 @@ html {
     }
 
     .tridimensional_form_1 {
-        top: 0;
         left: 0;
-        transform: translate(-15%, -40%);
+        top: 0;
+        transform: translate(-100%);
+        @include m.desktop {
+            top: 0;
+            left: 0;
+            transform: translate(-15%, -40%);
+        }
     }
 
     .tridimensional_form_2 {
         top: 0;
         right: 0;
-        transform: translate(20%, -30%);
+        transform: translate(100%);
+        @include m.desktop {
+            top: 0;
+            right: 0;
+            transform: translate(20%, -30%);
+        }
     }
 
     .tridimensional_form_3 {
         left: 0;
-        
-        transform: translate(-25%, 60%);
+        transform: translate(-100%, 60%);
+        @include m.desktop {
+            left: 0;
+            transform: translate(-25%, 60%);
+        }
     }
 
     .tridimensional_form_1_par {
         right: 0;
-        transform: translate(20%, 65%);
+        transform: translate(100%, 65%);
+        @include m.desktop {
+            right: 0;
+            transform: translate(20%, 65%);
+        }
+    }
+}
+
+.body-quote {
+    font-family: v.$main_font;
+    font-optical-sizing: auto;
+    font-style: normal;
+    color: v.$white;
+    font-size: 2rem;
+    background-image: url(../../src/img/fondo1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    @include m.desktop {
+        background-image: url(../../src/img/fondo3.png);
+        height: 108rem;
     }
 }
 
@@ -237,12 +377,7 @@ h3 {
     font-size: 8rem;
     text-align: center;
 }
-img {
-    max-width: 100%;
-    width: 100%;
-    height: auto;
-    display: block;
-}
+
 body > section {
     padding: 10rem 0
 }

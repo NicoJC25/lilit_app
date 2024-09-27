@@ -2,29 +2,52 @@
 @use 'base/mixins' as m;
 
 .main-content-service {
-    @include m.grid(2);
+    @include m.desktopXXL {
+        @include m.grid(2);
+    }
 }
 
 .images-quote {
-    @include m.grid(2);
-    justify-items: center;
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 1rem 0 1rem;
+    @include m.desktopXL {
+        @include m.grid(2);
+        justify-items: center;
+    }
 }
 
 .small-images {
-    align-content: center;
     margin-top: 5rem;
-    margin-left: 20rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include m.desktopXL {
+        align-content: center;
+    }
+    @include m.desktopXXL {
+        margin-left: 20rem;
+    }
 
 
     .img-1,
     .img-2,
     .img-3 {
-        width: 15rem;
-        height: 15rem;
+        width: 20rem;
+        height: 20rem;
         background-color: v.$purple;
-        margin-bottom: 5rem;
+        margin:0 2rem 5rem 2rem;
         border-radius: 3rem;
+        @include m.tablet {
+            width: 45rem;
+            height: 40rem;
+        }
+        @include m.desktopXL {
+            width: 15rem;
+            height: 15rem;
+            margin: 0 0 5rem 0;
+        }
 
 
         // &:last-child {
@@ -35,27 +58,43 @@
 }
 
 .big-image {
-    margin-left: 5rem;
-    align-content: center;
+    margin-left: 0;
+    @include m.desktopXXL {
+        margin-left: 5rem;
+        align-content: center;
+    }
 
 
     .img-4 {
-        width: 60rem;
-        height: 65rem;
+        width: 30rem;
+        height: 35rem;
         background-color: v.$purple;
         border-radius: 6rem;
+        @include m.tablet {
+            width: 60rem;
+            height: 65rem;
+        }
     }
 }
 
 .service-info {
-    display: grid;
-    grid-template-rows: repeat(1, 1fr 3fr);
-    justify-items: center;
-    margin-right: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include m.desktopXXL {
+        display: grid;
+        grid-template-rows: repeat(1, 1fr 3fr);
+        justify-items: center;
+        margin-right: 10rem;
+    }
 
     .service-info-title {
         color: v.$blue;
-        align-content: end;
+        margin-top: 5rem;
+        @include m.desktopXXL {
+            margin-top: 0;
+            align-content: end;
+        }
         
         h3 {
             font-weight: 100;
@@ -79,12 +118,18 @@
 .quote {
     display: flex;
     flex-direction: row;
-    background-color: v.$light_brown;
-    margin-left: 17rem;
-    width: 90rem;
+    background-color: v.$purple;
+    margin:  5rem 0 5rem 0;
+    max-width: auto;
+    max-height: auto;
     border-radius: 8rem;
     align-items: center;
     justify-content: center;
+    @include m.desktopXXL {
+        background-color: v.$purple;
+        width: 90rem;
+        margin: 0 0 5rem 17rem;
+    }
 
     img {
         width: 10rem;
@@ -97,5 +142,6 @@
         font-weight: 100;
         margin: 0;
         color: v.$blue;
+        text-align: center;
     }
 }

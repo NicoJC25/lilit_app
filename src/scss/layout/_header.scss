@@ -10,24 +10,38 @@
 
     .header-content {
         padding: 2rem;
-        @include m.tablet {
-            display: flex;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include m.desktop {
+            flex-direction: row;
             justify-content: space-evenly;
             align-items: center;
         }
     }
 
     .header_img {
-        width: 10rem;
         text-align: left;
+
+        img {
+            width: 20rem;
+            @include m.desktop {
+                width: 10rem;
+            }
+        }
     }
 }
 
 .nav {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    gap: 10rem;
+
+    @include m.desktop {
+        flex-direction: row;
+        gap: 10rem;
+    }
 
     a {
         color: v.$brown;
@@ -68,8 +82,11 @@
 
         li {
             margin: 0;
-            padding: 0 2rem;
             list-style: none;
+
+            @include m.desktop {
+                padding: 0 2rem;
+            }
 
             a {
                 font-size: 2.5rem; // Tamaño más pequeño para las opciones del submenú
@@ -121,37 +138,46 @@
     }
 }
 
-.nav-inicio {
-    color: v.$blue;
-}
-
 .header-postoperatory {
     background-color: rgba($color: v.$white, $alpha: .5);
     border-bottom: .1rem solid #b8b8b8; 
     border-radius: 0 0 4rem 4rem;
 
     .header-content {
-        
-        @include m.tablet {
-            display: flex;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include m.desktop {
+            flex-direction: row;
             justify-content: space-evenly;
             align-items: center;
         }
     }
 
     .header_img {
-        width: 10rem;
         text-align: left;
+
+        img {
+            width: 20rem;
+            @include m.desktop {
+                width: 10rem;
+            }
+        }
     }
 }
 
 .nav-postoperatory {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    gap: 10rem;
 
-
+    @include m.desktop {
+        flex-direction: row;
+        gap: 10rem;
+    }
+    
     a {
         color: v.$brown;
         font-size: 3.5rem;

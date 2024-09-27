@@ -2,36 +2,54 @@
 @use 'base/mixins' as m;
 
 .before_and_after {
-    position: relative;  // Asegura que los elementos hijos se posicionen en relación a este contenedor
+    @include m.desktop {
+        position: relative;  // Asegura que los elementos hijos se posicionen en relación a este contenedor
+    }
 
     .before_after_text {
-        z-index: -2;  // Pon el texto en un nivel superior
-        position: absolute;  // Para asegurar que el z-index se aplique correctamente
         background-color: v.$blue;
         width: 100%;
         padding: 2rem;
-        text-align: right;
-        right: 0;
+        text-align: center;
+        @include m.desktop {
+            z-index: -2;  // Pon el texto en un nivel superior
+            position: absolute;  // Para asegurar que el z-index se aplique correctamente
+            right: 0;
+            text-align: right;
+        }
 
         h2 {
             font-family: v.$main_font;
             font-weight: 100;
             margin: 0;
-            margin-right: 20rem;
+
+            @include m.desktopXL {
+                margin-right: 20rem;
+            }
         }
     }
 }
 
 .img_before_after {
-    @include m.grid(3);
-    margin-top: 25rem;
-    align-items: center;
-    max-width: 182rem;
+    max-width: 100%;
+    margin: 0 1rem 0 1rem;
+    @include m.tablet {
+        margin: 25rem 1rem 0 1rem;
+        @include m.grid(3);
+        align-items: center;
+    }
     
     img {
         display: block;
-        max-width: 45rem;
-        margin: auto;
+        max-width: 100%;
+        margin: 8rem 1rem 0 1rem;
+        padding-right: 2rem;
+        
+        @include m.tablet {
+            max-width: 100%;
+            margin: auto;
+            padding-right: 0;
+        }
         // -webkit-box-shadow: 0px 3px 21px 0px rgba(0,0,0,0.75);
         // -moz-box-shadow: 0px 3px 21px 0px rgba(0,0,0,0.75);
         // box-shadow: 0px 3px 21px 0px rgba(0,0,0,0.75);

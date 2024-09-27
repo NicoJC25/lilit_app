@@ -25,6 +25,12 @@
     }    
 }
 
+@mixin desktopXXL {
+    @media (min-width: v.$desktopXXL) {
+        @content;
+    }    
+}
+
 /* Mixins for other things */
 
 @mixin container {
